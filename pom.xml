@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.github.shoothzj</groupId>
+        <artifactId>java-dependency</artifactId>
+        <version>3.1.2</version>
+    </parent>
+
+    <artifactId>config-client</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.9</version>
+    <modules>
+        <module>config-client-api</module>
+        <module>config-client-impl-mysql</module>
+        <module>config-client-impl-common</module>
+        <module>config-client-impl-postgre-spring</module>
+        <module>config-client-impl-edge</module>
+        <module>config-client-impl-memory</module>
+        <module>config-client-impl-common-jdbc</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
