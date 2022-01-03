@@ -1,7 +1,7 @@
 package com.github.shoothzj.config.client.impl.mysql.util;
 
 import com.github.shoothzj.config.client.impl.mysql.TestConfig;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class SqlUtilTest {
 

@@ -2,12 +2,11 @@ package com.github.shoothzj.config.client.impl.mysql;
 
 import com.github.shoothzj.config.client.api.ConfigListener;
 import com.github.shoothzj.config.client.impl.mysql.connector.MysqlConnector;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class ConfigDataHolderTest {
 
     @Test
-
     public void testConfigDataHolder() throws InterruptedException {
         ConfigDataHolder<TestConfig> configDataHolder = new ConfigDataHolder<>(TestConfig.class,
                 new ConfigListener<TestConfig>() {
