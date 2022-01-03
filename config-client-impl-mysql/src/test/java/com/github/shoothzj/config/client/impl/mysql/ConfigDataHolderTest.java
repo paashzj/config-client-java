@@ -7,8 +7,10 @@ import org.junit.Test;
 public class ConfigDataHolderTest {
 
     @Test
+
     public void testConfigDataHolder() throws InterruptedException {
-        ConfigDataHolder<TestConfig> configDataHolder = new ConfigDataHolder<>(TestConfig.class, new ConfigListener<TestConfig>() {
+        ConfigDataHolder<TestConfig> configDataHolder = new ConfigDataHolder<>(TestConfig.class,
+                new ConfigListener<TestConfig>() {
             @Override
             public void addConfig(TestConfig config) {
 

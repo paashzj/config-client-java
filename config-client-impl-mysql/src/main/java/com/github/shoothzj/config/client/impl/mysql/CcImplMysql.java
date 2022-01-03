@@ -60,7 +60,9 @@ public class CcImplMysql extends BaseCcImpl<ConfigDataHolder> {
      * @param <T>
      */
     @Override
-    public <T extends BaseConfig> void registerConfig(Class<T> configClass, String configName, int version, List<FieldDescribe> fieldDescribeList, ConfigListener<T> configListener) {
+    public <T extends BaseConfig> void registerConfig(Class<T> configClass, String configName, int version,
+                                                      List<FieldDescribe> fieldDescribeList,
+                                                      ConfigListener<T> configListener) {
         Optional<ConfigPo> configPoOptional = mysqlConnector.findConfig(configName);
         // 先判断数据表配置中是否存在该配置
         if (!configPoOptional.isPresent()) {
@@ -90,7 +92,8 @@ public class CcImplMysql extends BaseCcImpl<ConfigDataHolder> {
         // todo 支持version的变更，判断是否兼容性变更，如果不兼容，则抛出异常，兼容则对数据库进行ALTER TABLE
     }
 
-    private <T extends BaseConfig> void putData(Class<T> configClass, ConfigListener<T> configListener, String configName, List<FieldDescribe> fieldDescribeList) {
+    private <T extends BaseConfig> void putData(Class<T> configClass, ConfigListener<T> configListener,
+                                                String configName, List<FieldDescribe> fieldDescribeList) {
         configHolderMap.put(configName, new ConfigDataHolder<>(configClass, configListener, mysqlConnector));
         FieldDescribeService.put(configName, fieldDescribeList);
     }

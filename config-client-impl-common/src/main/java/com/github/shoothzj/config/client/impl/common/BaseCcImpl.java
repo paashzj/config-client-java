@@ -27,7 +27,8 @@ public abstract class BaseCcImpl<C extends BaseConfigDataHolder> implements ICc 
     @Override
     public <T extends BaseConfig> void registerConfig(Class<T> configClass, ConfigListener<T> configListener) {
         ConfClass confClass = configClass.getAnnotation(ConfClass.class);
-        this.registerConfig(configClass, CcUtil.getConfigName(configClass), confClass.version(), CcUtil.getConfigFieldDescribe(configClass), configListener);
+        this.registerConfig(configClass, CcUtil.getConfigName(configClass), confClass.version(),
+                CcUtil.getConfigFieldDescribe(configClass), configListener);
     }
 
     @Override
@@ -51,7 +52,10 @@ public abstract class BaseCcImpl<C extends BaseConfigDataHolder> implements ICc 
         configHolderMap.get(CcUtil.getConfigName(configClass)).iterate(idFilter, consumer);
     }
 
-    protected abstract <T extends BaseConfig> void registerConfig(Class<T> configClass, String configName, int version, List<FieldDescribe> fieldDescribeList, ConfigListener<T> configListener);
+
+    protected abstract <T extends BaseConfig> void registerConfig(Class<T> configClass, String configName, int version,
+                                                                  List<FieldDescribe> fieldDescribeList,
+                                                                  ConfigListener<T> configListener);
 
     protected abstract <T extends BaseConfig> void deleteConfigVal(String configName, String configItemId);
 

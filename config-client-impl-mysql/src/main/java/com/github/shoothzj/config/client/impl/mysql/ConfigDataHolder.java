@@ -45,7 +45,8 @@ public class ConfigDataHolder<T extends BaseConfig> extends BaseConfigDataHolder
         Map<String, IdVersion> auxMap = new HashMap<>();
         try (SqlSession sqlSession = this.mysqlConnector.getSessionFactory().openSession()) {
             Connection connection = sqlSession.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT id, version FROM " + this.tableName);
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("SELECT id, version FROM " + this.tableName);
             ResultSet executeQuery = preparedStatement.executeQuery();
             while (executeQuery.next()) {
                 IdVersion idVersion = new IdVersion();
@@ -85,7 +86,8 @@ public class ConfigDataHolder<T extends BaseConfig> extends BaseConfigDataHolder
         Map<String, T> map = new HashMap<>();
         try (SqlSession sqlSession = this.mysqlConnector.getSessionFactory().openSession()) {
             Connection connection = sqlSession.getConnection();
-            String sql = "SELECT * FROM " + tableName + " WHERE id in (" + SqlUtil.preparePlaceHolders(needSyncList.size()) + ")";
+            String sql = "SELECT * FROM " + tableName + " WHERE id in ("
+                    + SqlUtil.preparePlaceHolders(needSyncList.size()) + ")";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             for (int i = 1; i <= needSyncList.size(); i++) {
                 preparedStatement.setString(i, needSyncList.get(i - 1));

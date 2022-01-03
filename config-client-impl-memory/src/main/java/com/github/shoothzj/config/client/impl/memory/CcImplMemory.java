@@ -9,8 +9,6 @@ import com.github.shoothzj.config.client.impl.common.util.CcUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
 
 /**
  * @author hezhangjian
@@ -31,7 +29,9 @@ public class CcImplMemory extends BaseCcImpl<ConfigDataHolder> {
     }
 
     @Override
-    protected <T extends BaseConfig> void registerConfig(Class<T> configClass, String configName, int version, List<FieldDescribe> fieldDescribeList, ConfigListener<T> configListener) {
+    protected <T extends BaseConfig> void registerConfig(Class<T> configClass, String configName, int version,
+                                                         List<FieldDescribe> fieldDescribeList,
+                                                         ConfigListener<T> configListener) {
         FieldDescribeService.put(configName, fieldDescribeList);
     }
 

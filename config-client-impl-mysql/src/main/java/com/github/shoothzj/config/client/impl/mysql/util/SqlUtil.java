@@ -17,14 +17,16 @@ import java.util.List;
  */
 public class SqlUtil {
 
-    public static <T extends BaseConfig> void fillInInsertParam(PreparedStatement preparedStatement, T config) throws SQLException {
+    public static <T extends BaseConfig> void fillInInsertParam(PreparedStatement preparedStatement,
+                                                                T config) throws SQLException {
         List<Object> list = new ArrayList<>();
         list.add(config.getId());
         fillInParamAux(list, config.getVersion(), config);
         fillInParam(preparedStatement, list);
     }
 
-    public static <T extends BaseConfig> void fillInUpdateParam(PreparedStatement preparedStatement, T config, int oldVersion) throws SQLException {
+    public static <T extends BaseConfig> void fillInUpdateParam(PreparedStatement preparedStatement,
+                                                                T config, int oldVersion) throws SQLException {
         List<Object> list = new ArrayList<>();
         fillInParamAux(list, config.getVersion(), config);
         list.add(config.getId());

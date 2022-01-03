@@ -52,8 +52,8 @@ public class ReflectionUtil {
         while (Object.class != searchType && searchType != null) {
             Field[] fields = getDeclaredFields(searchType);
             for (Field field : fields) {
-                if ((name == null || name.equals(field.getName())) &&
-                        (type == null || type.equals(field.getType()))) {
+                if ((name == null || name.equals(field.getName()))
+                        && (type == null || type.equals(field.getType()))) {
                     return field;
                 }
             }
@@ -98,8 +98,8 @@ public class ReflectionUtil {
         try {
             result = clazz.getDeclaredFields();
         } catch (Throwable ex) {
-            throw new IllegalStateException("Failed to introspect Class [" + clazz.getName() +
-                    "] from ClassLoader [" + clazz.getClassLoader() + "]", ex);
+            throw new IllegalStateException("Failed to introspect Class [" + clazz.getName()
+                    + "] from ClassLoader [" + clazz.getClassLoader() + "]", ex);
         }
         return result;
     }

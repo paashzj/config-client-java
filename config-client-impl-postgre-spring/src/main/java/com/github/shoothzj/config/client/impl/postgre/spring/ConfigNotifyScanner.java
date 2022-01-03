@@ -27,7 +27,8 @@ public class ConfigNotifyScanner implements InitializingBean {
 
     private long maxIdScanned;
 
-    private final ScheduledExecutorService executorService = new ScheduledThreadPoolExecutor(1, new DefaultThreadFactory("notify-scanner"));
+    private final ScheduledExecutorService executorService =
+            new ScheduledThreadPoolExecutor(1, new DefaultThreadFactory("notify-scanner"));
 
     public ConfigNotifyScanner() {
     }

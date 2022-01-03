@@ -88,7 +88,8 @@ public class CcImplPostgre extends BaseCcImpl<ConfigDataHolder> {
         colValueList.add(config.getVersion());
         String auxColName = colNameList.stream().map(s -> s + "= ?").collect(Collectors.joining(","));
         sqlBuilder.append(" ").append(auxColName).append(" WHERE id = ? AND version = ?");
-        int updateResult = jdbcTemplate.update(sqlBuilder.toString(), SqlUtil.updateSqlHelp(colValueList, config.getId(), oldVersion));
+        int updateResult = jdbcTemplate.update(sqlBuilder.toString(),
+                SqlUtil.updateSqlHelp(colValueList, config.getId(), oldVersion));
         log.info("updateResult result is [{}]", updateResult);
         if (updateResult == 1) {
             asyncConfigNotify(configName, config.getId());
@@ -120,7 +121,9 @@ public class CcImplPostgre extends BaseCcImpl<ConfigDataHolder> {
     }
 
     @Override
-    protected <T extends BaseConfig> void registerConfig(Class<T> configClass, String configName, int version, List<FieldDescribe> fieldDescribeList, ConfigListener<T> configListener) {
+    protected <T extends BaseConfig> void registerConfig(Class<T> configClass, String configName, int version,
+                                                         List<FieldDescribe> fieldDescribeList,
+                                                         ConfigListener<T> configListener) {
         final ConfigPo configPoQuery = configRepository.findByConfigName(configName);
         if (configPoQuery == null) {
             final ConfigPo configPo = new ConfigPo();
@@ -147,7 +150,8 @@ public class CcImplPostgre extends BaseCcImpl<ConfigDataHolder> {
         // todo 兼容性判断
     }
 
-    private <T extends BaseConfig> void putData(Class<T> configClass, ConfigListener<T> configListener, String configName, List<FieldDescribe> fieldDescribeList) {
+    private <T extends BaseConfig> void putData(Class<T> configClass, ConfigListener<T> configListener,
+                                                String configName, List<FieldDescribe> fieldDescribeList) {
         configHolderMap.put(configName, new ConfigDataHolder<>(configClass, configListener));
         FieldDescribeService.put(configName, fieldDescribeList);
     }
