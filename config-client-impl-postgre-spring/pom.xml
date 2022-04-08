@@ -25,7 +25,7 @@
         <dependency>
             <groupId>com.github.shoothzj</groupId>
             <artifactId>sdk-spring-util</artifactId>
-            <version>3.0.33.RELEASE</version>
+            <version>3.1.11</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
