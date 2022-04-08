@@ -4,6 +4,7 @@ import com.github.shoothzj.config.client.impl.mysql.connector.MysqlConnector;
 import com.github.shoothzj.config.client.impl.mysql.domain.ConfigNotifyPo;
 import com.github.shoothzj.config.client.impl.mysql.mapper.ConfigNotifyMapper;
 import org.apache.ibatis.session.SqlSession;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -12,6 +13,7 @@ import java.time.ZoneId;
 /**
  * @author hezhangjian
  */
+@Disabled
 public class ConfigNotifyAgingTest {
 
     private final MysqlConnector mysqlConnector = new MysqlConnector();

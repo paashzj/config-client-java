@@ -25,7 +25,7 @@
         <dependency>
             <groupId>com.github.shoothzj</groupId>
             <artifactId>java-tool</artifactId>
-            <version>3.1.0</version>
+            <version>3.1.11</version>
         </dependency>
     </dependencies>
 

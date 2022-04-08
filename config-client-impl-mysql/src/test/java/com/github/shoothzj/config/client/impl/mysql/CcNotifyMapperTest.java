@@ -5,6 +5,7 @@ import com.github.shoothzj.config.client.impl.mysql.domain.ConfigNotifyPo;
 import com.github.shoothzj.config.client.impl.mysql.mapper.ConfigNotifyMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
 /**
  * @author shoothzj
  */
+@Disabled
 @Slf4j
 public class CcNotifyMapperTest {
 

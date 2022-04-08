@@ -2,8 +2,10 @@ package com.github.shoothzj.config.client.impl.mysql;
 
 import com.github.shoothzj.config.client.api.ConfigListener;
 import com.github.shoothzj.config.client.impl.mysql.connector.MysqlConnector;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+@Disabled
 public class ConfigDataHolderTest {
 
     @Test
