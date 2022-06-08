@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.github.shoothzj</groupId>
         <artifactId>java-dependency</artifactId>
-        <version>3.1.29</version>
+        <version>3.1.30</version>
     </parent>
 
     <artifactId>config-client</artifactId>
@@ -42,12 +42,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M6</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.2</version>
                 <configuration>
                     <configLocation>./ci/checkstyle/checkstyle.xml</configLocation>
                     <suppressionsLocation>./ci/checkstyle/suppressions.xml</suppressionsLocation>
@@ -59,7 +57,6 @@
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>4.7.0.0</version>
                 <configuration>
                     <xmlOutput>true</xmlOutput>
                     <failOnError>false</failOnError>
@@ -68,7 +65,6 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.8</version>
                 <executions>
                     <execution>
                         <goals>
