@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.github.shoothzj</groupId>
         <artifactId>java-dependency</artifactId>
-        <version>3.1.31</version>
+        <version>3.1.32</version>
     </parent>
 
     <artifactId>config-client</artifactId>
